@@ -1,6 +1,6 @@
 node {
 
-   def registryProjet='forma-ludo/'
+   def registryProjet='forma-fred/'
    def IMAGE="${registryProjet}app:${version}"
 
     stage('Clone') {
@@ -18,7 +18,7 @@ node {
     }
 
     stage('Push') {
-       docker.withRegistry('https://registry.ludovic.io/' , 'harbor_id') {
+       docker.withRegistry('https://registry.ludovic.io/' , 'registry_id') {
               img.push 'latest'
               img.push()
           }
